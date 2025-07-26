@@ -4,9 +4,11 @@ const cors = require('cors');
 
 require('dotenv').config(); 
 const app = express();
-app.use(cors(
-    origin: 'https://college-news.vercel.app'
-));
+
+app.use(cors({
+  origin: 'https://college-news.vercel.app'
+}));
+
 app.use(express.json());
 
 // TODO : Add routes here later
