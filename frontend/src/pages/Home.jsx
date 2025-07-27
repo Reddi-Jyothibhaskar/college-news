@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ArticleCard from '../components/ArticleCard';
 
+const API_BASE = process.env.REACT_APP_API_URL;
+
 function Home() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/articles')
+    axios.get(`${API_BASE}/api/articles`)
       .then(res => setArticles(res.data))
       .catch(err => console.error(err));
   }, []);
